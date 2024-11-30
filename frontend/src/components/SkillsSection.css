@@ -1,0 +1,31 @@
+/* SkillsSection.css */
+.skills-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  .skills-section {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    scroll-behavior: smooth; /* Enables smooth manual scrolling */
+    width: 90%; /* Adjust width as needed */
+    max-width: 1000px; /* Optional max-width */
+  }
+  
+  .skill {
+    flex: 0 0 auto; /* Prevents shrinking or growing */
+    padding: 0.5rem 1rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
