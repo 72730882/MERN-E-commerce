@@ -11,6 +11,7 @@ const responsive = {
     1024: { items: 1 },
 };
 
+
 const items = [
     <div className="item" data-value="1" style={{ display: 'flex', width: '100%' }}>
         <div style={{ width: '50%' }}>
@@ -20,7 +21,7 @@ const items = [
             <h3 className='prata-regular ' style={{ fontWeight: 'bold', fontSize: '1.8rem', color: '#333', marginBottom: '15px' }}>Tekiya Bridals</h3>
             <p style={{ fontSize: '1.1rem', color: '#555', marginTop: '10px' }}>Designer lehengas for the exceptional you.</p>
             <button className='relative' style={{ marginTop: '15px', padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-                Shop Now
+                Shop now
             </button>
         </div>
     </div>,
