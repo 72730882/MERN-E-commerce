@@ -15,7 +15,7 @@ const LatestCollection = () => {
 
     useEffect(()=>{
         setLatestProducts(products.slice(0,10));
-    })
+    }, [products]);// Only run this effect when `products` changes
 
 
     return (
@@ -32,7 +32,7 @@ const LatestCollection = () => {
 
             {
             latestProducts.map((item,index)=>(
-                <ProductItem key={index} id={item.id} image={item.image} name={item.name} price={item.price} />
+                <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
 
             ))
             }
