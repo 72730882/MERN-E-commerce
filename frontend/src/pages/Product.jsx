@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { useState } from "react";
 import { assets } from "../assets/assets";
+import RelatedProduct from "../components/RelatedProduct";
 
 function Product() {
   const { productId } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -49,34 +50,79 @@ function Product() {
         <div className="flex-1">
           <h1 className="font-medium text-2xl ">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <img src={assets.star_icon} alt="" className="w-3 5"/>
-            <img src={assets.star_icon} alt="" className="w-3 5"/>
-            <img src={assets.star_icon} alt="" className="w-3 5"/>
-            <img src={assets.star_icon} alt="" className="w-3 5"/>
-            <img src={assets.star_dull_icon} alt="" className="w-3"/>
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_dull_icon} alt="" className="w-3" />
             <p className="pl-2">(122)</p>
           </div>
-          <p className="mt-3 text-3xl font-medium">{currency}{productData.price}</p>
-          <p className="mt-3 text-gray-500 md:w-4/5"> {productData.description}</p>
+          <p className="mt-3 text-3xl font-medium">
+            {currency}
+            {productData.price}
+          </p>
+          <p className="mt-3 text-gray-500 md:w-4/5">
+            {" "}
+            {productData.description}
+          </p>
           <div className="flex flex-col gap-4 my-3">
             <p>Select Size</p>
             <div className="flex gap-2">
-               {productData.sizes.map((item,index)=>(
-                <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ? 'border-orange-500': ''}`} key={index}>{item}</button>
-               ))}
+              {productData.sizes.map((item, index) => (
+                <button
+                  onClick={() => setSize(item)}
+                  className={`border py-2 px-4 bg-gray-100 ${
+                    item === size ? "border-orange-500" : ""
+                  }`}
+                  key={index}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
-
           </div>
-          <button className="bg-black text-white px-6 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
-          <hr className="mt-4 sm:w-4/5"/>
+          <button onClick={()=>addToCart(productData._id,size)} className="bg-black text-white px-6 py-3 text-sm active:bg-gray-700">
+            ADD TO CART
+          </button>
+          <hr className="mt-4 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% original product,</p>
             <p>Cash on delivery is available on this product.</p>
             <p>Easy return and exchange policy within 7 days.</p>
-
           </div>
         </div>
       </div>
+
+      {/*_____ Description & review section______ */}
+
+      <div className="mt-20">
+        <div className="flex">
+          <b className="border px-5 py-3 text-sm">Description</b> {/* bold */}
+          <p className="border px-5 py-3 text-sm"> Reviews(122)</p>
+        </div>
+        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
+          <p>
+            Explore the ListView.builder widget—it’s perfect for dynamic lists
+            like our To-Do List App! 💡 For Web Developers: Check out CSS
+            Flexbox for building responsive layouts. Mastering it will make your
+            designs shine! ✨ This Week’s Project Reminder: Keep working on your
+            To-Do List App! - Beginners: Focus on layout and structure. -
+            Advanced: Add features like sorting or filtering tasks.
+          </p>
+          <p>
+            💡 For Web Developers: Check out CSS Flexbox for building responsive
+            layouts. Mastering it will make your designs shine! ✨ This Week’s
+            Project Reminder: Keep working on your To-Do List App! - Beginners:
+            Focus on layout and structure. - Advanced: Add features like sorting
+            or filtering tasks.{" "}
+          </p>
+        </div>
+      </div>
+
+      {/* related product*/}
+      <RelatedProduct category={productData.category} subCategory={productData.subCategory}/>
+
+
     </div>
   ) : (
     <div className="opacity-0"></div>
