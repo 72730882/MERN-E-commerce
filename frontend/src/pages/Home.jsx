@@ -5,19 +5,17 @@ import NewsletterBox from "../components/NewsletterBox"
 import OurPolicy from "../components/OurPolicy"
 import Testimonials from "../components/Testimonials"
 
+
 const Home = () => {
   return (
     <div>
-
-      < Carousel/>
-      < LatestCollection/>
+      <Carousel />
+      <LatestCollection />
       <BestSeller />
       <Testimonials />
-      <OurPolicy/>
+      <OurPolicy />
       <NewsletterBox />
-
     </div>
   )
 }
-
 export default Home

@@ -10,9 +10,10 @@ const BestSeller = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const bestProduct = products.filter((item) => item.bestseller);
+    
+    const bestProduct = products.filter((item) => (item.bestseller === true ));
     setBestSeller(bestProduct); // Display all best sellers
-  }, [products]);
+  },[products]);
 
   useEffect(() => {
     const container = containerRef.current;
