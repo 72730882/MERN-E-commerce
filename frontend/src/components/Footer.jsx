@@ -7,7 +7,7 @@ const Footer = () => {
     <div>
         <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
             <div>
-                <img src={assets.logo} className='mb-5 w-32' alt=""/>
+                <img src={assets.logo2} className='mb-5 w-32' alt=""/>
                 <p className='w-full md:w-2/3 text-gray-600'>
                 lerem epsum  is simply dummy text of the pricicng and typesetting industy and its is so good at typing where my and you is fly on the sky they type something new on the desctop so please be on your time for that we dont got to thea</p>
             </div>

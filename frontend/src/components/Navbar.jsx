@@ -19,9 +19,9 @@ const Navbar = () => {
 
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
-        <Link to='/'><img src={assets.logo} className='w-36' alt=""/></Link>
-        <ul className='hidden sm:flex gap-5 text-sm text-gray-700 hidden'>
+    <div className='flex items-center justify-between py-5 font-medium relative'>
+        <Link to='/'><img src={assets.logo2} className='w-36' alt=""/></Link>
+        <ul className='hidden sm:flex gap-5 text-sm text-gray-700 '>
             <NavLink to='/' className='flex flex-col items-center gap-1'>
                 <p>HOME</p>
                 <hr className='w-2/3 border-none h-[1.5px] bg-gray-700 hidden'></hr>
@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className='group relative'>
                 <img onClick={()=> token ? null : navigate('/login')} className='w-5 cursor-pointer' src={assets.profile_icon} alt=""/>
     {/*dropdown menu */}
-                {token && <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+                {token && <div className='absolute right-0 mt-2 w-36 bg-white shadow-lg rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50'>
                     <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
                         <p className='cursor-pointer hover:text-black'>My Profile</p>
                         <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
