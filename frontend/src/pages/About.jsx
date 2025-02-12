@@ -13,12 +13,7 @@ const About = () => {
       <div className="my-10 flex flex-col md:flex-row gap-16">
         <img className="w-full md:max-w-[450px]" src={assets.about_img} alt="" />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
-        <p> Explore the ListView.builder widget—it’s perfect for dynamic lists
-            like our To-Do List App! 💡 For Web Developers: Check out CSS
-            Flexbox for building responsive layouts. Mastering it will make your
-            designs shine! ✨ This Week’s Project Reminder: Keep working on your
-            To-Do List App! - Beginners: Focus on layout and structure. -
-            Advanced: Add features like sorting or filtering tasks.</p>
+        
             <p> Explore the ListView.builder widget—it’s perfect for dynamic lists
             like our To-Do List App! 💡 For Web Developers: Check out CSS
             Flexbox for building responsive layouts. Mastering it will make your
