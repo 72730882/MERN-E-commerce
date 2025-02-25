@@ -78,6 +78,14 @@ const PlaceOrder = () => {
     }
   }
 
+  const handlePaymentMethod = (methodType) => {
+    if (methodType === 'cbe' || methodType === 'tele') {
+      toast.info("Coming Soon");
+    } else {
+      setMethod(methodType);
+    }
+  }
+
   return (
     <form onSubmit={onSubmitHandler} className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t">
       {/* Left side */}
@@ -115,13 +123,13 @@ const PlaceOrder = () => {
         <div className="mt-12">
           <Title text1={"PAYMENT"} text2={"METHOD"} />
           <div className="flex gap-3 flex-col lg:flex-row">
-            <div onClick={()=>setMethod('stripe')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+            <div onClick={()=>handlePaymentMethod('cbe')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400' : '' }`}></p>
-              <img className="h-3 mx-4" src={assets.stripe_logo} alt=""/>
+              <img className="h-10 mx-10" src={assets.cbe} alt=""/>
             </div>
-            <div onClick={()=>setMethod('razorpay')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+            <div onClick={()=>handlePaymentMethod('tele')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'razorpay' ? 'bg-green-400' : '' }`}></p>
-              <img className="h-3 mx-4" src={assets.razorpay_logo} alt=""/>
+              <img className="h-10 mx-10" src={assets.tele} alt=""/>
             </div>
             <div onClick={()=>setMethod('cod')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-green-400' : '' }`}></p>

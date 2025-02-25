@@ -44,7 +44,8 @@ const BestSeller = () => {
             overflowWrap: "break-word", // Forces long words to break
           }}
         >
-          Showcasing all the best sellers with smooth scrolling.
+         Explore our top-selling products, loved by customers for their quality and 
+         value.
         </p>
       </div>
 

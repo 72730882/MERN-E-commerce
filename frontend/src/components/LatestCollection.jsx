@@ -24,7 +24,7 @@ const LatestCollection = () => {
             < Title text2={' LATEST  COLLECTIONS'}/>
             <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600  ' style={{
       overflowWrap: "break-word" 
-   }}>fdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+   }}>Check out our latest collection, filled with fresh and stylish products just for you! We’ve handpicked the top 10 new arrivals to bring you the best in fashion and quality. Find something you love and stay trendy with our newest items!</p>
         </div>
 
         {/*Rendering Products */}

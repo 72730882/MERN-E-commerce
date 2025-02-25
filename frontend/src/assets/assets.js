@@ -58,6 +58,9 @@ import cl2 from './cl2.jpg'
 import cl3 from './cl3.jpg'
 import cl4 from './cl4.jpg'
 import cl5 from './cl5.jpg'
+import cbe from './cbe.png'
+import bg from './bg.png'
+import tele from './tele.png'
 
 
 import logo2 from './logo2.png'
@@ -102,7 +105,10 @@ export const assets = {
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    bg,
+    cbe,
+    tele
 }
 
 export const products = [

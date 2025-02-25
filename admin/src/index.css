@@ -8,11 +8,11 @@
 }
 select,input,textarea{
   border: 1px solid #c2c2c2;
-  outline-color: #C586A5;
+  outline-color: #8a51ae;
   border-radius: 4px;
 }
 
 .active{
-  background-color: #ffebf5;
-  border-color: #C586A5;
+  background-color: #b978ce;
+  border-color: #804a8e;
 }

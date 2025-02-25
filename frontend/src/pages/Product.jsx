@@ -102,19 +102,11 @@ function Product() {
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-            Explore the ListView.builder widget—it’s perfect for dynamic lists
-            like our To-Do List App! 💡 For Web Developers: Check out CSS
-            Flexbox for building responsive layouts. Mastering it will make your
-            designs shine! ✨ This Week’s Project Reminder: Keep working on your
-            To-Do List App! - Beginners: Focus on layout and structure. -
-            Advanced: Add features like sorting or filtering tasks.
-          </p>
-          <p>
-            💡 For Web Developers: Check out CSS Flexbox for building responsive
-            layouts. Mastering it will make your designs shine! ✨ This Week’s
-            Project Reminder: Keep working on your To-Do List App! - Beginners:
-            Focus on layout and structure. - Advanced: Add features like sorting
-            or filtering tasks.{" "}
+          Discover the perfect balance of style and functionality with our premium products. 
+  Designed for comfort and durability, each item is crafted with high-quality 
+  materials to meet your everyday needs. Whether you're looking for casual wear 
+  or something for a special occasion, our collection offers versatility and 
+  sophistication in every piece.{" "}
           </p>
         </div>
       </div>

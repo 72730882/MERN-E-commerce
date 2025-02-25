@@ -13,10 +13,9 @@ const Contact = () => {
         <img className="w-full md:max-w-[480px]" src={assets.contact_img} alt="" />
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">Our Store</p>
-          <p className="text-gray-500"> 342343 Donsa <br />Bale, Robe</p>
+          <p className="text-gray-500"> Bale, Robe</p>
           <p className=" text-gray-500"> Tel: 098766543221 <br/> Email: fayo@gmail.com</p>
           <p className="font-semibold text-xl text-gray-600"> career at Fayo</p>
-          <p className="text-gray-500">Learn More</p>
           <button className="borde border-black hover-black px-8 py-4 text-sm hover:bg-black hover:text-white r ">Explore jop</button>
           <p ></p>
         </div>
