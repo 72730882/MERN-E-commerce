@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Poppins:wght@400;500;600&family=Prata&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: Outfit;
+}
+select,input,textarea{
+  border: 1px solid #c2c2c2;
+  outline-color: #8a51ae;
+  border-radius: 4px;
+}
+
+.active{
+  background-color: #b978ce;
+  border-color: #804a8e;
+}
