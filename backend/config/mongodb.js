@@ -1,26 +1,25 @@
 import mongoose from "mongoose";
 import dns from "node:dns";
 
-// Set reliable DNS servers for MongoDB Atlas SRV lookup resolution on Windows
 try {
   dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
 } catch (e) {
-  console.log("DNS setServers notice:", e.message);
+  // Ignore in environments where setting DNS servers is not allowed
 }
 
-const connectDB = async () => {
-  mongoose.connection.on("connected", () => {
-    console.log("DB connected successfully");
-  });
+let isConnected = false;
 
-  mongoose.connection.on("error", (err) => {
-    console.log("MongoDB connection error:", err.message);
-  });
+const connectDB = async () => {
+  if (isConnected || mongoose.connection.readyState === 1) {
+    return;
+  }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    const conn = await mongoose.connect(process.env.MONGODB_URI);
+    isConnected = conn.connections[0].readyState === 1;
+    console.log("DB connected successfully");
   } catch (error) {
-    console.log("Initial MongoDB connection failed:", error.message);
+    console.log("MongoDB connection error:", error.message);
   }
 };
 

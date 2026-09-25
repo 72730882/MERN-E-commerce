@@ -19,6 +19,12 @@ connectCloudinary()
 app.use(express.json())
 app.use(cors())
 
+// Middleware to ensure database connection before processing requests on serverless
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
+
 //api endpoints
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
@@ -31,3 +37,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port, ()=> console.log('server startedon PORT: ' + port))
+
+export default app;
