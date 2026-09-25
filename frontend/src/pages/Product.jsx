@@ -112,7 +112,11 @@ function Product() {
       </div>
 
       {/* related product*/}
-      <RelatedProduct category={productData.category} subCategory={productData.subCategory}/>
+      <RelatedProduct
+        category={productData.category}
+        subCategory={productData.subCategory}
+        currentId={productData._id}
+      />
 
 
     </div>
