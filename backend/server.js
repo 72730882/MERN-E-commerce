@@ -8,8 +8,7 @@ import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
-
-//App Config
+// App Config
 const app = express()
 const port = process.env.PORT || 4000
 connectDB()
@@ -17,25 +16,37 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'token', 'Authorization']
+}))
 
 // Middleware to ensure database connection before processing requests on serverless
 app.use(async (req, res, next) => {
-  await connectDB();
-  next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error("Database connection error in middleware:", err);
+    res.status(500).json({ success: false, message: "Database connection failed" });
+  }
 });
 
-//api endpoints
-app.use('/api/user',userRouter)
-app.use('/api/product',productRouter)
-app.use('/api/cart',cartRouter)
-app.use('/api/order',orderRouter)
+// api endpoints
+app.use('/api/user', userRouter)
+app.use('/api/product', productRouter)
+app.use('/api/cart', cartRouter)
+app.use('/api/order', orderRouter)
 
-
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send("API Working")
 })
 
-app.listen(port, ()=> console.log('server startedon PORT: ' + port))
+// Start server locally (on Vercel, the app is exported and handled as serverless function)
+if (!process.env.VERCEL) {
+  app.listen(port, () => console.log('Server started on PORT: ' + port))
+}
 
 export default app;
